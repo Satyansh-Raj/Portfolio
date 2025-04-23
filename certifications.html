@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications - Satyansh Raj</title>
+    <link rel="stylesheet" href="css/new-portfolio.css">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fallback fonts will be used as defined in the CSS -->
+    <style>
+        /* Video background styles */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .video-background video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            opacity: 0.15;
+        }
+        
+        /* Content overlay */
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(var(--bg-color-rgb), 0.85);
+            min-height: 100vh;
+        }
+        
+        .certification-list {
+            margin-top: 30px;
+        }
+        
+        .certification-item {
+            background-color: #111;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .certification-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .certification-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .certification-title {
+            color: #39FF14;
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        
+        .certification-date {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        .certification-issuer {
+            color: #fff;
+            margin: 5px 0 10px;
+            font-weight: bold;
+        }
+        
+        .certification-desc {
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+        
+        .credential-id {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .certification-link {
+            display: inline-block;
+            color: #39FF14;
+            text-decoration: none;
+            border: 1px solid #39FF14;
+            padding: 5px 10px;
+            border-radius: 3px;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+        
+        .certification-link:hover {
+            background-color: #39FF14;
+            color: #000;
+        }
+        
+        /* Certificate Modal Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-container {
+            position: relative;
+            width: 80%;
+            height: 85%;
+            max-width: 900px;
+            background-color: #111;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+            animation: modalFadeIn 0.3s ease-out;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #000;
+            border-bottom: 1px solid #222;
+        }
+        
+        .modal-title {
+            color: #39FF14;
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        
+        .modal-close {
+            color: #666;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .modal-close:hover {
+            color: #39FF14;
+        }
+        
+        .modal-body {
+            height: calc(100% - 60px);
+        }
+        
+        .modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="content-wrapper">
+        <nav class="main-nav">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">Satyansh Raj</div>
+                    <ul class="nav-links">
+                        <li><a href="new.html">About Me</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="CV.pdf" download>Resume</a></li>
+                        <li><a href="certifications.html" class="active">Certifications</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle">More <span class="dropdown-arrow">▼</span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="ctf.html">CTF's & Hackathons</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <header class="fade-in">
+                <h1 class="typing-effect">My Certifications</h1>
+                <p class="tagline">Certifications and credentials</p>
+            </header>
+            
+            <section id="technical-certifications" class="fade-in delay-100">
+                <h2>Professional Certifications</h2>
+                <div class="certification-list">
+                    <div class="certification-item fade-in delay-300">
+                        <div class="certification-header">
+                            <h3 class="certification-title">QuickHeal Certified Digital Forensic Investigator</h3>
+                            <span class="certification-date">January 2025</span>
+                        </div>
+                        <p class="certification-issuer">QuickHeal</p>
+                        <p class="certification-desc">Demonstrates proficiency in digital forensic investigation, including data recovery, evidence analysis, and the use of forensic tools to uncover cybercrime.</p>
+                        <p class="credential-id">Certificate ID: 2023/QH/LPU50</p>
+                        <a href="assets/quickheal.pdf" class="certification-link cert-link">View Certificate</a>
+                    </div>
+                    <div class="certification-item fade-in delay-200">
+                        <div class="certification-header">
+                            <h3 class="certification-title">CompTIA Network+ N10-008</h3>
+                            <span class="certification-date">December 2024</span>
+                        </div>
+                        <p class="certification-issuer">CompTIA</p>
+                        <p class="certification-desc">Validates knowledge of networking concepts, infrastructure, operations, security, and troubleshooting across wired and wireless networks.</p>
+                        <p class="credential-id">Certificate ID: XV2XQLXQTE111TS9</p>
+                        <a href="assets/CompTIA.pdf" class="certification-link cert-link">View Certificate</a>
+                    </div>                
+                </div>
+            </section>
+            
+            <section id="course-completions" class="fade-in delay-800">
+                <h2>Course Completions</h2>
+                <div class="certification-list">
+                    <div class="certification-item fade-in delay-900">
+                        <div class="certification-header">
+                            <h3 class="certification-title">Programming using C++</h3>
+                            <span class="certification-date">July 2024</span>
+                        </div>
+                        <p class="certification-issuer">Cipherschools</p>
+                        <p class="certification-desc">Covers foundational to intermediate concepts in C++ programming, focusing on problem-solving, object-oriented principles, and hands-on coding practices.</p>
+                        <a href="assets/cipher.pdf" class="certification-link cert-link">View Certificate</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 Satyansh Raj. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Certificate Modal -->
+    <div id="certificate-modal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 class="modal-title">Certificate Preview</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe id="certificate-iframe" src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/new-portfolio.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('certificate-modal');
+            const iframe = document.getElementById('certificate-iframe');
+            const closeBtn = document.querySelector('.modal-close');
+            
+            // Get all certificate links
+            const certLinks = document.querySelectorAll('.cert-link');
+            
+            // Add click event to each certificate link
+            certLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pdfPath = this.getAttribute('href');
+                    iframe.src = pdfPath;
+                    
+                    // Show modal
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                });
+            });
+            
+            // Close modal when clicking the close button
+            closeBtn.addEventListener('click', function() {
+                closeModal();
+            });
+            
+            // Close modal when clicking outside the content
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+            
+            // Close modal on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    closeModal();
+                }
+            });
+            
+            function closeModal() {
+                modal.style.display = 'none';
+                document.body.style.overflow = ''; // Restore scrolling
+                iframe.src = ''; // Clear iframe source
+            }
+        });
+    </script>
+</body>
+</html> 
