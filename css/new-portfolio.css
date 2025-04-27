@@ -744,39 +744,64 @@ footer .container {
 .education-container {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
 }
 
 .education-item {
-    background-color: rgba(0, 0, 0, 0.2);
-    border-left: 3px solid #39FF14;
+    background-color: #111;
     padding: 20px;
     border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 150px;
 }
 
 .education-item h3 {
-    color: #fff;
+    color: #39FF14;
     margin-top: 0;
-    margin-bottom: 10px;
-    font-size: 1.2rem;
+    margin-bottom: 12px;
 }
 
 .edu-institution {
-    color: #39FF14;
     font-weight: bold;
-    margin: 5px 0;
+    margin-bottom: 5px;
 }
 
 .edu-date {
     color: #aaa;
     font-style: italic;
-    margin: 5px 0;
 }
 
-.edu-details {
-    color: #ddd;
-    margin: 10px 0 0 0;
-    line-height: 1.5;
+.edu-logo {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    max-width: 80px;
+    height: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.edu-logo:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .edu-logo {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        margin-top: 15px;
+        align-self: flex-end;
+    }
+    
+    .education-item {
+        padding: 15px;
+        min-height: auto;
+    }
 }
 
 /* GitHub Link Styles */
