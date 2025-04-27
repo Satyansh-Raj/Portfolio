@@ -38,41 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
     if (dropdownToggle) {
         dropdownToggle.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            // Check if we're on mobile based on the current viewport width
-            if (window.innerWidth < 768) {
-                const dropdownMenu = this.nextElementSibling;
-                const isVisible = dropdownMenu.classList.contains('show-mobile');
-                
-                // Close any other open dropdowns
-                document.querySelectorAll('.dropdown-menu.show-mobile').forEach(menu => {
-                    if (menu !== dropdownMenu) {
-                        menu.classList.remove('show-mobile');
-                    }
-                });
-                
-                // Toggle current dropdown
-                dropdownMenu.classList.toggle('show-mobile');
-                
-                // Toggle arrow direction
-                const arrow = this.querySelector('.dropdown-arrow');
-                if (arrow) {
-                    arrow.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
-                }
-            }
-        });
-        
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown-menu.show-mobile').forEach(menu => {
-                    menu.classList.remove('show-mobile');
-                });
-                
-                document.querySelectorAll('.dropdown-arrow').forEach(arrow => {
-                    arrow.style.transform = 'rotate(0deg)';
-                });
-            }
+            const dropdown = this.closest('.dropdown');
+            dropdown.classList.toggle('active');
         });
     }
     
@@ -163,4 +130,23 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Thanks for your message! I\'ll get back to you soon.');
         });
     }
+    
+    // Add animation to sections when they enter viewport
+    function checkVisibility() {
+        animatedElements.forEach(element => {
+            const rect = element.getBoundingClientRect();
+            const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+            
+            if (rect.top <= viewportHeight * 0.8 && rect.bottom >= 0) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0)';
+            }
+        });
+    }
+    
+    // Initial check
+    checkVisibility();
+    
+    // Check on scroll
+    window.addEventListener('scroll', checkVisibility);
 }); 
