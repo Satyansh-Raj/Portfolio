@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+
+html, body {
+    font-family: 'DejaVu Sans Mono', monospace;
+    font-weight: 500;
+}
+
+body {
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    color: #008c23;
+    font-size: 16px;
+    line-height: 1.4;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#terminal-container {
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+#terminal-output {
+    margin-bottom: 10px;
+}
+
+#terminal-prompt {
+    display: flex;
+    align-items: center;
+}
+
+#prompt-prefix {
+    color: #008c23;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#command-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #008c23;
+    outline: none;
+    font-family: 'DejaVu Sans Mono', monospace;
+    font-size: 16px;
+    caret-color: #008c23;
+    padding: 0;
+    margin: 0;
+}
+
+.line {
+    min-height: 22px;
+    width: 100%;
+    white-space: pre-wrap;
+}
+
+.command-line {
+    margin-bottom: 5px;
+}
+
+.ok {
+    color: #00ff00;
+}
+
+.error {
+    color: #ff0000;
+}
+
+.info {
+    color: #00bfff;
+}
+
+.menu-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.menu-item {
+    margin-left: 20px;
+}
+
+.typing-effect {
+    overflow: hidden;
+    border-right: 0.15em solid #008c23;
+    white-space: nowrap;
+    animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #008c23 }
+} 

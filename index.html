@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satyansh Raj - Portfolio</title>
+    
+    <!-- Preload fonts for better performance -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;700&display=swap">
+    
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    
+    <style>
+        /* Ensure proper font loading with fallbacks */
+        html, body {
+            font-family: 'DejaVu Sans Mono', monospace;
+            font-weight: 500;
+        }
+        input, button, textarea {
+            font-family: 'DejaVu Sans Mono', monospace;
+        }
+        
+        /* Inline critical styles as fallback */
+        .fallback-content {
+            display: none;
+            margin: 20px;
+        }
+        body.js-error .fallback-content {
+            display: block;
+        }
+        body.js-error .animation-container {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fallback content in case JavaScript fails -->
+    <div class="fallback-content">
+        <h1>My Portfolio</h1>
+        <p>Welcome to my terminal-style portfolio. If you're seeing this message, there might be an issue loading the interactive version.</p>
+        <p>Please make sure JavaScript is enabled and try refreshing the page.</p>
+    </div>
+
+    <div id="app">
+        <div class="content-wrapper">
+            <div class="animation-container">
+                <!-- Boot sequence and terminal will be placed here -->
+                <div class="initial-message">Loading terminal...</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <span><a href="#" target="_blank">About</a></span>
+            <span><a href="#" target="_blank">Contact</a></span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Error handling
+        window.addEventListener('error', function() {
+            document.body.classList.add('js-error');
+            console.error('JavaScript error detected, showing fallback content');
+        });
+        
+        // Font loading check
+        document.fonts.ready.then(function() {
+            console.log("All fonts are loaded");
+        }).catch(function(err) {
+            console.warn("Font loading issue:", err);
+        });
+        
+        $(document).ready(function() {
+            try {
+                console.log('Document ready in inline script');
+                // Load the main script after jQuery is loaded
+                const script = document.createElement('script');
+                script.src = 'script.js';
+                script.onerror = function() {
+                    document.body.classList.add('js-error');
+                    console.error('Failed to load script.js');
+                };
+                document.body.appendChild(script);
+            } catch (error) {
+                document.body.classList.add('js-error');
+                console.error('Error in inline script:', error);
+            }
+        });
+    </script>
+</body>
+</html> 
