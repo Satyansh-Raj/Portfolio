@@ -56,10 +56,10 @@ $(document).ready(function() {
                 { content: "Starting system message bus: dbus", delay: 200 },
                 { content: "Starting MTA: exim4.", delay: 20 },
                 { content: "", delay: 500, clear: true },
-                { content: "Debian GNU/Linux 7 Details ttyl", delay: 400 },
+                { content: "Debian GNU/Linux 7 Details ttyl", delay: 500 },
                 { content: "&nbsp;", delay: 40 },
                 { content: "User login: ", typedContent: "root", delay: 800 },
-                { content: "password: ", typedContent: "LAb^^e8accO+RS!n", delay: 400 },
+                { content: "password: ", typedContent: "LAb^^e8accO+RS!n", delay: 500 },
                 { content: "Loading portfolio...", delay: 500 },
                 { content: "", delay: 250, clear: true }
             ];
