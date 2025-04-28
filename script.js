@@ -28,7 +28,7 @@ $(document).ready(function() {
                 { content: "Welcome to GRUB!", delay: 2000 },
                 { content: "", delay: 500, clear: true },
                 { content: "Loading Linux 3.2.0-4-amd64 ...", delay: 200 },
-                { content: "Loading initial ramdisk ...", delay: 400 },
+                { content: "Loading initial ramdisk ...", delay: 500 },
                 { content: "", delay: 500, clear: true },
                 { content: "Loading, please wait ...", delay: 600 },
                 { content: "[    2.194785] sd 0:0:0:0: [sda] Assuming drive cache: write through", delay: 200 },
@@ -58,8 +58,8 @@ $(document).ready(function() {
                 { content: "", delay: 500, clear: true },
                 { content: "Debian GNU/Linux 7 Details ttyl", delay: 400 },
                 { content: "&nbsp;", delay: 40 },
-                { content: "User login: ", typedContent: "root", delay: 600 },
-                { content: "password: ", typedContent: "LAb^^e8accO+RS!n", delay: 200 },
+                { content: "User login: ", typedContent: "root", delay: 800 },
+                { content: "password: ", typedContent: "LAb^^e8accO+RS!n", delay: 400 },
                 { content: "Loading portfolio...", delay: 500 },
                 { content: "", delay: 250, clear: true }
             ];
